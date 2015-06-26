@@ -1,0 +1,29 @@
+package org.mornsun.info.protocol;
+
+message InfoReqPack
+{
+	optional uint32 version = 1 [default = 1];  // version of this protocol
+	optional string uid = 2; // with any character, not only numeric
+	optional string ip = 3; // client IP, it is determined by the ISP of user's device
+	optional string app = 4;  // name of the user's APP
+	optional string app_ver = 5;  // version of the user's APP
+	optional string os = 6; // name of the user's operation system, like IOS、android
+	optional string os_ver = 7; // version of the user's OS
+	optional string channel = 8;  // channel of the distributer of publishing the user's APP
+	optional bool loc_switch = 9 [default = false];  // if the user needs the location info
+	optional string isp = 10;  // location info: name of the ISP, if it is denoted and loc_switch is open, the ISP result interpreted by server-end will be ignored
+	optional string nation = 11;  // location info: nation of the user's geographic location, , if one of these three scale locations is denoted and loc_switch is open, the location result interpreted by server-end will be ignored
+	optional string province = 12;  // location info: province of the user's geographic location, , if one of these three scale locations is denoted and loc_switch is open, the location result interpreted by server-end will be ignored
+	optional string city = 13;  // location info: city of the user's geographic location, , if one of these three scale locations is denoted and loc_switch is open, the location result interpreted by server-end will be ignored
+}
+
+message InfoResPack
+{
+	optional uint32 version = 1 [default = 1];  // version of this protocol
+	repeated uint32 sids = 2; // sampling ID list, sample results for an user's context
+	optional string isp = 9;  //  location info: name of the ISP, if it is denoted and loc_switch is open, the ISP result interpreted by server-end will be ignored
+	optional string nation = 10;  // location info: nation of the user's geographic location, , if one of these three scale locations is denoted and loc_switch is open, the location result interpreted by server-end will be ignored
+	optional string province = 11;  // location info: province of the user's geographic location, , if one of these three scale locations is denoted and loc_switch is open, the location result interpreted by server-end will be ignored
+	optional string city = 12;  // location info: city of the user's geographic location, , if one of these three scale locations is denoted and loc_switch is open, the location result interpreted by server-end will be ignored
+}
+

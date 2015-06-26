@@ -1,0 +1,27 @@
+UpdatePeriod: 1
+HealthyCheckerPeriod: 1
+Services:
+ - Name: "INFO"
+   ConnectTimeout: 2000
+   WriteTimeout: 1000
+   ReadTimeout: 1000
+   MaxConnect: 500
+   Retry: 2
+   Linger: 3
+   Pipeline: org.mornsun.client.pipeline.InfoClientPipeline
+   Machines:
+#    - "192.168.16.21:39087"
+    - "192.168.16.21:39088"
+#    - "192.168.16.21:39089"
+ - Name: ADAPTER
+   ConnectTimeout: 2000
+   WriteTimeout: 1000
+   ReadTimeout: 1000
+   MaxConnect: 500
+   Retry: 2
+   Linger: 3
+   Pipeline: org.mornsun.client.pipeline.InfoClientPipeline
+   Machines:
+    - "127.0.0.1:39087"
+    - "127.0.0.1:39088"
+    - "127.0.0.1:39089"

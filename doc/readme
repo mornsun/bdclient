@@ -1,0 +1,7 @@
+- Configure maven in eclipse.
+- Import a maven project: if you come across dependence error, right click the project in project explorer and select "Maven - Update Projects...", then select the root directory of this project and refresh it.
+- Protobuf: InfoProtocol is just an example, you can use any protocol as you wish.
+- Debug / Run
+> - Modify config/client.yaml, which is pretty readable if you are familiar with network
+> - Open "Debug configuration - vm arguments", type -Dbdclient-config=conf
+> - Debug or run it!
